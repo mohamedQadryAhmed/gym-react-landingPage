@@ -13,3 +13,9 @@ body,
   font-family: "DM Sans", sans-serif;
   @apply text-gray-500;
 }
+
+@layer utilities {
+  .header-text {
+    @apply text-3xl font-montserrat font-bold basis-3/5;
+  }
+}
