@@ -8,19 +8,18 @@ type Props = {
 };
 
 export default function ContactUs({ setSelectedPage }: Props) {
+  const {
+    register,
+    trigger,
+    formState: { errors },
+  } = useForm();
 
-    const { 
-        register,
-        trigger, 
-        formState: {errors},
-    } = useForm();
-
-    const onSubmit = async (e: any) => {
-        const isValid = await trigger();
-        if(!isValid) {
-            e.preventDefault();
-        }
-    };
+  const onSubmit = async (e: any) => {
+    const isValid = await trigger();
+    if (!isValid) {
+      e.preventDefault();
+    }
+  };
   return (
     <section id="contactus" className="mx-auto w-5/6 pt-24 pb-32">
       <motion.div
@@ -36,7 +35,7 @@ export default function ContactUs({ setSelectedPage }: Props) {
           variants={{
             hidden: { opacity: 0, x: -50 },
             visible: { opacity: 1, x: 0 },
-          }} 
+          }}
         >
           <h1 className="header-text uppercase">
             <span className="text-primary-500">Join now </span>to get in shape
@@ -50,62 +49,61 @@ export default function ContactUs({ setSelectedPage }: Props) {
 
         {/* Form */}
         <div className="mt-10 md:flex justify-between gap-8">
-        <motion.div
+          <motion.div
             className="mt-10 basis-3/5 md:mt-0"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.5 }}
-            transition={{delay:0.2, duration: 0.75 }}
+            transition={{ delay: 0.2, duration: 0.75 }}
             variants={{
               hidden: { opacity: 0, y: 50 },
               visible: { opacity: 1, y: 0 },
             }}
-        >
-            <form 
-                action=""
-                target="_blank"
-                method="POST"
-                onSubmit={onSubmit}
-                >
-                <input
-                    className="input " 
-                    type="text" 
-                    placeholder="NAME"
-                    {...register("name", {
-                        required: true,
-                        maxLength: 100
-                    })}/>
-                {errors.name && (
-                    <p className="mb-1 text-primary-500">
-                        {errors.name.type === "required" && "This Field is Required."}
-                        {errors.name.type === "maxLength" && "Max Lenght is 100 Char."}
-                    </p>
-                )}
-                <input 
-                    className="input"
-                    type="email" 
-                    placeholder="EMAIL"
-                    {...register("email", {
-                        required: true,
-                        pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                      })}/>
-                    {errors.email && (
+          >
+            <form action="" target="_blank" method="POST" onSubmit={onSubmit}>
+              <input
+                className="input "
+                type="text"
+                placeholder="NAME"
+                {...register("name", {
+                  required: true,
+                  maxLength: 100,
+                })}
+              />
+              {errors.name && (
+                <p className="mb-1 text-primary-500">
+                  {errors.name.type === "required" && "This Field is Required."}
+                  {errors.name.type === "maxLength" &&
+                    "Max Lenght is 100 Char."}
+                </p>
+              )}
+              <input
+                className="input"
+                type="email"
+                placeholder="EMAIL"
+                {...register("email", {
+                  required: true,
+                  pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                })}
+              />
+              {errors.email && (
                 <p className="mb-1 text-primary-500">
                   {errors.email.type === "required" &&
                     "This field is required."}
                   {errors.email.type === "pattern" && "Invalid email address."}
                 </p>
               )}
-                <textarea 
-                    className="input"
-                    cols={50} 
-                    rows={4} 
-                    placeholder="MESSAGE"
-                    {...register("message", {
-                        required: true,
-                        maxLength: 2000,
-                      })} />
-                      {errors.message && (
+              <textarea
+                className="input"
+                cols={50}
+                rows={4}
+                placeholder="MESSAGE"
+                {...register("message", {
+                  required: true,
+                  maxLength: 2000,
+                })}
+              />
+              {errors.message && (
                 <p className="mb-1 text-primary-500">
                   {errors.message.type === "required" &&
                     "This field is required."}
@@ -114,31 +112,33 @@ export default function ContactUs({ setSelectedPage }: Props) {
                 </p>
               )}
 
-              <button 
+              <button
                 className="mt-5 py-3 px-20 rounded-lg bg-secondary-500 transition duration-500 hover:text-white "
-                type="submit">Send</button>
+                type="submit"
+              >
+                Send
+              </button>
             </form>
-
-        </motion.div>
-        <motion.div 
+          </motion.div>
+          <motion.div
             className="relative mt-16 basis-2/5 md:mt-0"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.5 }}
-            transition={{delay:0.2, duration: 0.75 }}
+            transition={{ delay: 0.2, duration: 0.75 }}
             variants={{
               hidden: { opacity: 0, y: 50 },
               visible: { opacity: 1, y: 0 },
-            }}>
-                <div className="w-full before:absolute before:-bottom-20 before:-right-10 before:z-[-1] md:before:content-evolvetext">
+            }}
+          >
+            <div className="w-full before:absolute before:-bottom-20 before:-right-10 before:z-[-1] md:before:content-evolvetext">
               <img
                 className="w-full"
                 alt="contact-us-page-graphic"
                 src={contactImg}
               />
             </div>
-
-        </motion.div>
+          </motion.div>
         </div>
       </motion.div>
     </section>

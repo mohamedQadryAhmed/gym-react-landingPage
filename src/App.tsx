@@ -5,10 +5,11 @@ import Home from "./sections/Home";
 import Benifits from "./sections/Benifits";
 import OurClasses from "./sections/OurClasses";
 import ContactUs from "./sections/ContactUs";
+import Footer from "./sections/Footer";
 
 function App() {
   const [selectedPage, setSelectedPage] = useState<SelectedPage>(
-    SelectedPage.Home,
+    SelectedPage.Home
   );
   const [isTopOfPage, setIsTopOfPage] = useState<boolean>(true);
 
@@ -31,10 +32,11 @@ function App() {
         selectedPage={selectedPage}
         setSelectedPage={setSelectedPage}
       />
-      <Home setSelectedPage={setSelectedPage}/>
-      <Benifits setSelectedPage={setSelectedPage}/>
-      <OurClasses setSelectedPage={setSelectedPage}/>
-      <ContactUs setSelectedPage={setSelectedPage}/>
+      <Home setSelectedPage={setSelectedPage} />
+      <Benifits setSelectedPage={setSelectedPage} />
+      <OurClasses setSelectedPage={setSelectedPage} />
+      <ContactUs setSelectedPage={setSelectedPage} />
+      <Footer />
     </div>
   );
 }

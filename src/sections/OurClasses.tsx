@@ -34,17 +34,16 @@ export default function OurClasses({ setSelectedPage }: Props) {
           </div>
         </motion.div>
         <div className="mt-10 h-[353px] overflow-x-auto overflow-y-hidden scrollbar">
-            <ul className="w-[2800px] whitespace-nowrap">
-                {
-                    classes.map((item: ClassType , index) => (
-                        <Class 
-                            key={index}
-                            name={item.name}
-                            desc={item.desc}
-                            img={item.image}/>
-                    ))
-                }
-            </ul>
+          <ul className="w-[2800px] whitespace-nowrap">
+            {classes.map((item: ClassType, index) => (
+              <Class
+                key={index}
+                name={item.name}
+                desc={item.desc}
+                img={item.image}
+              />
+            ))}
+          </ul>
         </div>
       </motion.div>
     </section>
