@@ -18,6 +18,9 @@ body,
   .header-text {
     @apply text-3xl font-montserrat font-bold basis-3/5;
   }
+  .input {
+    @apply mb-5 w-full rounded-lg bg-primary-300 px-5 py-3 placeholder-white outline-gray-50;
+  }
   .scrollbar::-webkit-scrollbar {
     width: 10px;
     height: 15px;
