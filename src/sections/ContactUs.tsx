@@ -1,7 +1,7 @@
 import { SelectedPage } from "@/assets/data";
 import { motion } from "framer-motion";
 import { useForm } from "react-hook-form";
-import contactImg from "@/assets/images/ContactUsPageGraphic.png";
+import contactImg from "@/assets/images/contact.jpg";
 
 type Props = {
   setSelectedPage: (value: SelectedPage) => void;
@@ -48,7 +48,7 @@ export default function ContactUs({ setSelectedPage }: Props) {
         </motion.div>
 
         {/* Form */}
-        <div className="mt-10 md:flex justify-between gap-8">
+        <div className="mt-10 md:flex justify-between gap-20">
           <motion.div
             className="mt-10 basis-3/5 md:mt-0"
             initial="hidden"

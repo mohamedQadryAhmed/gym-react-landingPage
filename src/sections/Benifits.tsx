@@ -8,7 +8,7 @@ import {
 } from "@heroicons/react/24/solid";
 
 import { motion } from "framer-motion";
-import BenefitsImg from "@/assets/images/BenefitsPageGraphic.png";
+import BenefitsImg from "@/assets/images/Benefits.png";
 
 type Props = {
   setSelectedPage: (value: SelectedPage) => void;
@@ -83,9 +83,17 @@ export default function Benifits({ setSelectedPage }: Props) {
         {/* Graphic and Description */}
         <div className="mt-16 md:flex  md:mt-28 items-center justify-between gap-20 ">
           {/* image */}
-          <img className="mx-auto" src={BenefitsImg} alt="Benefits image" />
+          <div className="relative mb-16">
+          <div className="before:absolute before:-top-20 before:-left-20 before:z-[-1] before:content-arrow">
+          <div className="before:absolute before:top-[45%] before:left-[9%] before:z-[-1] before:content-circles">
+          <img className="mx-auto" src={BenefitsImg} alt="Benefits image"/>
+          </div>
+          </div>
+          </div>
+          
+          
 
-          <div>
+          <div className="md:basis-2/3">
             {/* title */}
             <div className="relative">
               <div className="before:absolute before:-top-20 before:-left-20 before:z-[-1] before:content-abstractwaves">

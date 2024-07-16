@@ -28,6 +28,7 @@ module.exports = {
         abstractwaves: "url('./assets/images/AbstractWaves.png')",
         sparkles: "url('./assets/images/Sparkles.png')",
         circles: "url('./assets/images/Circles.png')",
+        arrow: "url('./assets/images/Arrow.png')",
       },
     },
     screens: {

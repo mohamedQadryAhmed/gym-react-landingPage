@@ -17,12 +17,12 @@ export interface ClassType {
     image: string
 }
 
-import image1 from "@/assets/images/image1.png";
-import image2 from "@/assets/images/image2.png";
-import image3 from "@/assets/images/image3.png";
-import image4 from "@/assets/images/image4.png";
-import image5 from "@/assets/images/image5.png";
-import image6 from "@/assets/images/image6.png";
+import image1 from "@/assets/images/class1.jpg";
+import image2 from "@/assets/images/class2.jpg";
+import image3 from "@/assets/images/class3.jpg";
+import image4 from "@/assets/images/class4.jpg";
+import image5 from "@/assets/images/class5.jpg";
+import image6 from "@/assets/images/class6.jpg";
 
 export const classes: Array<ClassType> = [
     {

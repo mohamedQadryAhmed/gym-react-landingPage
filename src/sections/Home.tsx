@@ -5,7 +5,7 @@ import AnchorLink from "react-anchor-link-smooth-scroll";
 import { motion } from "framer-motion";
 
 import HomePageText from "@/assets/images/HomePageText.png";
-import HomePageGraphic from "@/assets/images/HomePageGraphic.png";
+import HomePageGraphic from "@/assets/images/hero_image.png";
 import SponserRedBull from "@/assets/images/SponsorRedBull.png";
 import SponserFortune from "@/assets/images/SponsorFortune.png";
 import SponserForbes from "@/assets/images/SponsorForbes.png";
@@ -68,8 +68,8 @@ export default function Home({ setSelectedPage }: Props) {
             </AnchorLink>
           </motion.div>
         </div>
-        <div className="flex basis-3/5 justify-center md:z-10 md:ml-40 md:mt-16 md:justify-items-end">
-          <img src={HomePageGraphic} alt="" />
+        <div className="flex basis-3/5 justify-center md:z-10 md:ml-40 md:-mb-32 mt-8 md:justify-items-end ">
+          <img src={HomePageGraphic} alt="" width={400}/>
         </div>
       </motion.div>
       {isAboveMediumScreens && (
